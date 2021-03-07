@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+header{
+    display: flex;
+    background-color: #f0f8ff;
+    padding: 0.5rem 1rem;
+}
+
+#content {
+    display: flex;
+    background-color: #dae0e6;
+    padding: 0.5rem 1rem;
+}
+
+#main-area {
+    width: 60%;
+}
+#side-area {
+    width: 25%;
+}
+
+footer {
+    display: flex;
+    background-color: #f0f8ff;
+    padding: 0.5rem 1rem;
+}
