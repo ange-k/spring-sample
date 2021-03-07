@@ -21,6 +21,6 @@ public class BoardController {
 
   @PostMapping("/board")
   public String postComment(@ModelAttribute CommentForm comment) {
-    return "board";
+    return "redirect:/board";
   }
 }
