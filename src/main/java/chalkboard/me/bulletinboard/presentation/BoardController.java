@@ -3,6 +3,8 @@ package chalkboard.me.bulletinboard.presentation;
 import chalkboard.me.bulletinboard.presentation.form.CommentForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +22,9 @@ public class BoardController {
   }
 
   @PostMapping("/board")
-  public String postComment(@ModelAttribute CommentForm comment) {
+  public String postComment(
+      @Validated @ModelAttribute CommentForm comment,
+      BindingResult bindingResult) {
     return "redirect:/board";
   }
 }
