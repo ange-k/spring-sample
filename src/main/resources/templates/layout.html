@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html
-    xmlns         = "http://www.w3.org/1999/xhtml"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="http://www.w3.org/1999/xhtml"
 >
 <head>
     <meta charset="UTF-8" />
     <meta name="description" content="common-meta">
     <title>レイアウト</title>
+
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <main id="main-area" layout:fragment="layoutContent">
-        <p>Default content</p>
-    </main>
-    <div id="side-area">
-        サイドバー
+    <header>header</header>
+    <div id="content">
+        <main id="main-area" layout:fragment="layoutContent">
+            <p>Default content</p>
+        </main>
+        <div id="side-area">
+            サイドバー
+        </div>
     </div>
+    <footer>footer</footer>
 </body>
 </html>
