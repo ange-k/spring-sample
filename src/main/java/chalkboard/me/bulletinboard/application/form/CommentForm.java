@@ -1,4 +1,4 @@
-package chalkboard.me.bulletinboard.presentation.form;
+package chalkboard.me.bulletinboard.application.form;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;

@@ -1,6 +1,6 @@
 package chalkboard.me.bulletinboard.presentation;
 
-import chalkboard.me.bulletinboard.presentation.form.CommentForm;
+import chalkboard.me.bulletinboard.application.form.CommentForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
