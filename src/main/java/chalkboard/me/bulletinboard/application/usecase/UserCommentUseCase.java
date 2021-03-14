@@ -27,7 +27,6 @@ public class UserCommentUseCase {
 
     // 例えばここで、直近の投稿の一覧を取得し、今回と同じ内容の投稿がないかチェックする
 
-    UserCommentDto dto = UserCommentDto.from(userComment);
-    repository.save(dto);
+    repository.save(userComment);
   }
 }
