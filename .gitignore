@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+jig-cli.jar
+documents/*
+
 ### STS ###
 .apt_generated
 .classpath
