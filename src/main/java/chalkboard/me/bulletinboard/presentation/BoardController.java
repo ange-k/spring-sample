@@ -2,6 +2,7 @@ package chalkboard.me.bulletinboard.presentation;
 
 import chalkboard.me.bulletinboard.application.form.CommentForm;
 import chalkboard.me.bulletinboard.application.usecase.UserCommentUseCase;
+import chalkboard.me.bulletinboard.domain.model.UserComments;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -18,6 +19,8 @@ public class BoardController {
 
   @GetMapping("/board")
   public ModelAndView viewBoard(ModelAndView modelAndView){
+    UserComments userComments = userCommentUseCase.read();
+    modelAndView.addObject("comments", userComments.getValues());
     modelAndView.setViewName("board");
     modelAndView.addObject("commentForm", new CommentForm());
     return modelAndView;

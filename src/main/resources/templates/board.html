@@ -11,7 +11,11 @@
 <body>
 <div layout:fragment="layoutContent">
     <div id="board-area">
-        投稿の内容を表示する場所
+        <h2 class="title">
+            【速報】鳩山由紀夫元首相、鳩の大群に襲われるも怪我なし★109
+        </h2>
+        <div th:replace="~{fragments/thread(comments=${comments})}">
+        </div>
     </div>
     <hr>
     <form method="POST" action="/board" th:object="${commentForm}">

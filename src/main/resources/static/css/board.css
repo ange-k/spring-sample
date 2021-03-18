@@ -6,3 +6,38 @@ form {
 .error-message {
     color: #e02525;
 }
+
+.thread {
+    font-size: 1rem;
+    color: #333;
+}
+
+h2.title {
+    color: #485269;
+    font-size: 2rem;
+}
+
+.user-comments {
+    display: flex;
+    flex-direction: column;
+    background-color: #efefef;
+}
+.user-comments:not(:last-child){
+    margin-bottom: 0.15rem;
+}
+.row-item > span{
+    margin-right: 0.2rem;
+}
+.row-item > .name {
+    color: green;
+    font-size: 1.2rem;
+}
+.row-item > .date {
+    font-size: 0.9rem;
+}
+.row-item > .address {
+    color: gray;
+}
+
+.text-area {
+}
