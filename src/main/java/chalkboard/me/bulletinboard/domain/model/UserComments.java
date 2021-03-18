@@ -7,8 +7,10 @@ import chalkboard.me.bulletinboard.domain.type.Name;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
@@ -17,6 +19,7 @@ public class UserComments {
   private final List<UserComment> values;
 
   public static UserComments from(List<UserComment> comments) {
+    if(CollectionUtils.isEmpty(comments)) return new UserComments(Collections.emptyList());
     return new UserComments(comments);
   }
 

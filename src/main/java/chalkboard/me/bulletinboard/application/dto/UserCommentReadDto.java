@@ -12,6 +12,6 @@ public class UserCommentReadDto {
   private final int id;
   private final String name;
   private final String mailAddress;
-  private final LocalDateTime createdAt;
   private final String comment;
+  private final LocalDateTime createdAt;
 }

@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:fragment="tableData(comments)" class="thread">
+    <div th:each="comment : ${comments}" class="user-comments">
+        <div class="row-item">
+            <span th:text="${comment.id}" class="number-id"></span>
+            <span th:text="${comment.name}" class="name"></span>
+            <span th:text="${comment.dateTime}" class="date"></span>
+            <span th:text="${comment.mailAddress}" class="address"></span>
+        </div>
+        <div th:text="${comment.comment}" class="text-area">
+        </div>
+    </div>
+</div>
+</html>
