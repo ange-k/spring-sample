@@ -3,6 +3,7 @@
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         xmlns:th="http://www.w3.org/1999/xhtml"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 >
 <head>
     <meta charset="UTF-8" />
@@ -12,7 +13,28 @@
     <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>header</header>
+    <header>
+        <div>
+            <h1 id="logo">けいじばん</h1>
+        </div>
+        <div class="account">
+            <div th:if="${#authorization.expression('isAuthenticated()')}">
+                <form th:action="@{/user/logout}" method="post">
+                    <button class="logout-button">
+                        ログアウト
+                    </button>
+                </form>
+            </div>
+            <div th:if="${#authorization.expression('!isAuthenticated()')}">
+                <a href="/user">
+                    <div>ログイン</div>
+                </a>
+                <a href="/user/signup">
+                    <div>サインアップ</div>
+                </a>
+            </div>
+        </div>
+    </header>
     <div id="content">
         <main id="main-area" layout:fragment="layoutContent">
             <p>Default content</p>

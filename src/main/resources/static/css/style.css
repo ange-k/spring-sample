@@ -5,6 +5,12 @@ header{
     display: flex;
     background-color: #f0f8ff;
     padding: 0.5rem 1rem;
+    justify-content: space-between;
+}
+
+#logo {
+    font-size: 1.5rem;
+    margin: 0.1rem 0.25rem;
 }
 
 #content {
