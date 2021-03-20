@@ -42,6 +42,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>30.1-jre</version>
+		</dependency>
+
 		<!-- DB -->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
