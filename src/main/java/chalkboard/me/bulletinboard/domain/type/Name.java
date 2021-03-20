@@ -4,6 +4,8 @@ import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 
+import java.util.Objects;
+
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode
 public class Name {
@@ -19,6 +21,9 @@ public class Name {
 
   @Override
   public String toString() {
-    return value;
+    if(Objects.isNull(this.value)) {
+      return "名無しさん";
+    }
+      return value;
   }
 }
