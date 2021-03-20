@@ -25,6 +25,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and().formLogin()
           .loginPage("/user").permitAll() // ログインページのカスタマイズ
           .defaultSuccessUrl("/board") // ログイン認証ページの要求, ログイン成功後デフォルト画面の設定
+        .and().logout()
+          .logoutUrl("/user/logout")
+          .logoutSuccessUrl("/user")
         .and().csrf().ignoringAntMatchers("/h2-console/**")
         .and().headers().frameOptions().sameOrigin();
   }
