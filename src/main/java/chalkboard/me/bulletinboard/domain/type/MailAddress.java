@@ -4,6 +4,8 @@ import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 
+import java.util.Objects;
+
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode
 public class MailAddress {
@@ -15,6 +17,9 @@ public class MailAddress {
 
   @Override
   public String toString() {
+    if(Objects.isNull(value)) {
+      return "";
+    }
     return value;
   }
 }
