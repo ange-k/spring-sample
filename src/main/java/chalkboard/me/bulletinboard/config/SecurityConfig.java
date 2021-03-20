@@ -20,8 +20,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   public void configure(HttpSecurity http) throws Exception {
     http.authorizeRequests()
-        .antMatchers("/h2-console/**").hasRole("ADMIN_ROLE")
-        .antMatchers("/board").hasRole("USER_ROLE")
+        .antMatchers("/h2-console/**").hasRole("ADMIN")
+        .antMatchers("/board").hasRole("USER")
         .and().formLogin()
           .loginPage("/user").permitAll() // ログインページのカスタマイズ
           .defaultSuccessUrl("/board") // ログイン認証ページの要求, ログイン成功後デフォルト画面の設定

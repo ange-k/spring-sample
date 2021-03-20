@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="http://www.w3.org/1999/xhtml"
+        layout:decorate="~{layout}">
+<head>
+    <title>掲示板</title>
+    <meta name="description" content="ログイン">
+</head>
+<body>
+<div layout:fragment="layoutContent">
+    <h2>ログイン</h2>
+    <form method="POST" th:action="@{/user}" th:object="${userForm}">
+        <div>
+            <input placeholder="ユーザネーム" th:field="*{username}">
+            <span class="error-message" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error</span>
+        </div>
+        <div>
+            <input placeholder="パスワード" th:field="*{password}" type="password">
+            <span class="error-message" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password Error</span>
+        </div>
+        <button>送信</button>
+    </form>
+</div>
+</body>
+</html>

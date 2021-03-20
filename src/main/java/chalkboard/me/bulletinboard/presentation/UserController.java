@@ -23,6 +23,14 @@ public class UserController {
 
   private final UserAuthUsecase userAuthUsecase;
 
+  @GetMapping
+  public ModelAndView loginPage(ModelAndView modelAndView) {
+    modelAndView.setViewName("user/login");
+    modelAndView.addObject("userForm", new UserForm());
+
+    return modelAndView;
+  }
+
   /**
    * 登録ページの表示
    * @return
