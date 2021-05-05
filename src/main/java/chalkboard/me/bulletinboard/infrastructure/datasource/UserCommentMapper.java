@@ -16,4 +16,7 @@ public interface UserCommentMapper {
 
   @Select("sql/selectUserComment.sql")
   List<UserCommentReadDto> select();
+
+  @Select("sql/selectMyComment.sql")
+  List<UserCommentReadDto> selectById(@Param("userId") String userId);
 }
