@@ -64,13 +64,6 @@
 			<artifactId>mybatis-thymeleaf</artifactId>
 			<version>1.0.3</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>2.7.0</version>
-			<scope>test</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -94,10 +87,10 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>2.7.0</version>
-			<scope>compile</scope>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>2.1.214</version>
+			<!--<scope>test</scope> 本来テストスコープだけで使うべき-->
 		</dependency>
 	</dependencies>
 

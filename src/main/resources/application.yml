@@ -1,8 +1,8 @@
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: org.hsqldb.jdbc.JDBCDriver
-    url: jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1;sql.syntax_ora=true
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:develop;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     hikari:
       pool-name: ConnectionPool
       leakDetectionThreshold: 5000
@@ -10,6 +10,7 @@ spring:
       minimum-idle: 10
       username: sa
       password:
+      driver-class-name: org.h2.Driver
   sql:
     init:
       schema-locations:
