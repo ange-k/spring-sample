@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.3</version>
+		<version>2.7.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>chalkboard.me</groupId>
 	<artifactId>bulletin-board</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<name>BulletinBoard</name>
 	<description>掲示板です</description>
 	<properties>
@@ -57,18 +57,19 @@
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.1.4</version>
+			<version>2.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis.scripting</groupId>
 			<artifactId>mybatis-thymeleaf</artifactId>
-			<version>1.0.2</version>
+			<version>1.0.3</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.200</version>
-			<!--<scope>test</scope> 本来テストスコープだけで使うべき-->
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.7.0</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -91,6 +92,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.7.0</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
