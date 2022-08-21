@@ -2,23 +2,20 @@ package chalkboard.me.bulletinboard.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.UserDetailsManager;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
+@Configuration
 @RequiredArgsConstructor
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig {
 
-  private final UserDetailsManager userDetailsManager;
-  private final PasswordEncoder passwordEncoder;
-
-  @Override
-  public void configure(HttpSecurity http) throws Exception {
+  @Bean
+  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeRequests()
         .antMatchers("/h2-console/**").hasRole("ADMIN")
         .antMatchers("/board").hasRole("USER")
@@ -30,17 +27,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           .logoutSuccessUrl("/user")
         .and().csrf().ignoringAntMatchers("/h2-console/**")
         .and().headers().frameOptions().sameOrigin();
+    return http.build();
   }
 
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.userDetailsService(userDetailsManager).passwordEncoder(passwordEncoder);
-  }
-
-  @Override
-  public void configure(WebSecurity web) throws Exception {
-    // Configure a new SecurityChainFilter
-    web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
+  @Bean
+  public WebSecurityCustomizer webSecurityCustomizer() {
+    return web -> web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
   }
 
 }
